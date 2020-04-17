@@ -27,3 +27,4 @@
 
 Good tutorials:
 * https://www.valentinog.com/blog/babel/
+* https://www.robinwieruch.de/minimal-node-js-babel-setup
