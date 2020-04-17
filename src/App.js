@@ -1,7 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Info from './components/Info';
-import Clock from './components/Clock'
+import Clock from './components/Clock';
+import ActionLink from './components/ActionLink';
 import './App.css';
 import './common.scss';
 
@@ -30,6 +31,9 @@ function App() {
         </p>
         <p>
           <Clock />
+        </p>
+        <p>
+          <ActionLink actionText={'Some Action Text'} />
         </p>
         <a
           className="App-link"

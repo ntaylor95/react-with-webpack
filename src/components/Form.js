@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainButton from './MainButton';
 
 class Form extends Component {
   constructor() {
@@ -9,6 +10,16 @@ class Form extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.showEntry = this.showEntry.bind(this);
+  }
+
+  handleClick(msg) {
+    alert(msg);
+  }
+
+  showEntry() {
+    alert(this.state.value);
   }
 
   handleChange(event) {
@@ -21,6 +32,8 @@ class Form extends Component {
   }
 
   render() {
+    const msg = 'This is life';
+
     return (
       <form>
         <input
@@ -28,6 +41,11 @@ class Form extends Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
+        <br/>
+        <br />
+        <MainButton name={'Click Me'} onClick={this.handleClick.bind(this, msg)} />
+        <br/>
+        <MainButton name={'What did I enter'} onClick={this.showEntry} />
       </form>
     );
   }
