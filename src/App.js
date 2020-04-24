@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Info from './components/Info';
 import Clock from './components/Clock';
 import ActionLink from './components/ActionLink';
+import ListItems from './components/ListItems';
 import './App.css';
 import './common.scss';
 
@@ -16,6 +17,11 @@ const element = (
 
 function App() {
   console.log(`I'm the payment-options-component`);
+  const items =[ 
+    {Id:1, Name:'Test 1'}, 
+    {Id:2, Name:'Test 2'}, 
+    {Id:3, Name:'Test 3'}, 
+  ]
   return (
     <div className="App">
       <header className="App-header">
@@ -31,6 +37,9 @@ function App() {
         </p>
         <p>
           <Clock />
+        </p>
+        <p>
+          <ListItems items={items} />
         </p>
         <p>
           <ActionLink actionText={'Some Action Text'} />
