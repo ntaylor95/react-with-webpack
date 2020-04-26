@@ -5,11 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "babel": "node_modules/.bin/babel src/services/before.js -o dist/test.js"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@babel/cli": "^7.8.4",
         "@babel/core": "^7.9.0",
         "@babel/preset-env": "^7.9.5",
         "@babel/preset-react": "^7.9.4",
@@ -25,7 +27,8 @@
         "sass-loader": "^8.0.2",
         "style-loader": "^1.1.4",
         "webpack": "^4.42.1",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
         "dotenv": "^8.2.0",
