@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest",
         "build": "webpack --mode production",
-        "babel": "node_modules/.bin/babel src/services/before.js -o dist/test.js"
+        "babel": "node_modules/.bin/babel src/services/before.js -w -o dist/test.js"
     },
     "author": "",
     "license": "ISC",
