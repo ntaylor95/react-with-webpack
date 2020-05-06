@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
-class ActionLink extends React.Component {
-    constructor(props) {
+type ActionLinkProps = {
+    actionText: string
+}
+
+class ActionLink extends React.Component<ActionLinkProps> {
+    constructor(props: ActionLinkProps) {
         super(props);
     
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(e) {
+    handleClick(e: MouseEvent) {
       e.preventDefault();
       console.log('The link was clicked.');
+      const target = e.target;
+      console.log(`The target is`);
+      console.log(target);
     }
   
     render() {
@@ -21,5 +28,7 @@ class ActionLink extends React.Component {
         )
     };
 }
+
+
 
 export default ActionLink;

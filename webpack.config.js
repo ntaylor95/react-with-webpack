@@ -1,4 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const  ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const path = require('path');
 
 // const configureSassLoader = () => ({
 //     test: /\.s?css$/,
@@ -30,12 +32,21 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
     // use to set new entry point other than index.js
     // entries: {
-    //     browser: './src/index.js'
+    //     browser: './src/index.tsx'
     // },
+    entry: './src/index.tsx',
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    devServer: {
+      contentBase: path.resolve(__dirname, 'dist'),
+      publicPath: '/'
+    },
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|tsx|ts)$/,
           exclude: /node_modules/,
           use: {
             loader: "babel-loader"
@@ -67,10 +78,14 @@ module.exports = {
         //configureSassLoader(),
       ]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
-        })
-    ]
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js']
+    }
+    // plugins: [
+    //   new HtmlWebPackPlugin({
+    //     template: "./src/index.html",
+    //     filename: "./index.html"
+    //   }),
+    //   new ForkTsCheckerWebpackPlugin({})       
+    // ]
   };
